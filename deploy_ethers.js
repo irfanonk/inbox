@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const provider = new HDWalletProvider(
   process.env.MNMC,
-  process.env.INFURA_RINKEBY_URL
+  process.env.INFURA_ROBSTEN_URL
 );
 const web3 = new Web3(provider);
 const deploy = async () => {
