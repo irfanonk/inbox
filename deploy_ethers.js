@@ -1,7 +1,7 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const { ethers } = require("ethers");
-const { interface, bytecode } = require("./compile");
+const { abi, evm } = require("./compile");
 require("dotenv").config();
 
 const provider = new HDWalletProvider(
@@ -16,7 +16,7 @@ const deploy = async () => {
 
     const signer = new ethers.providers.Web3Provider(provider).getSigner();
 
-    let factory = new ethers.ContractFactory(interface, bytecode, signer);
+    let factory = new ethers.ContractFactory(abi, evm.bytecode.object, signer);
 
     let contract = await factory.deploy(...constructorArgs);
 
