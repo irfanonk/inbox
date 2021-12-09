@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node deploy_ethers.js",
+    "web3": "node deploy_web3.js",
     "test": "mocha"
   },
   "author": "",
