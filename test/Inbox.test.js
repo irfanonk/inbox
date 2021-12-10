@@ -13,7 +13,7 @@ beforeEach(async () => {
   inbox = await new web3.eth.Contract(abi)
     .deploy({
       data: evm.bytecode.object,
-      arguments: ["Hi there!"],
+      arguments: ["Hi"],
     })
     .send({ from: accounts[0], gas: "1000000" });
 });
